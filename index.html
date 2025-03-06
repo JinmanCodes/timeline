@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오세훈-명태균 사건 타임라인</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* 모바일에서 타임라인 레이아웃 조정 */
+    @media (max-width: 768px) {
+      .timeline-container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      .timeline-item {
+        width: 90% !important;
+        margin-left: 2rem !important;
+        margin-right: auto !important;
+        text-align: left !important;
+      }
+      .timeline-marker {
+        left: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-center mb-8">한눈에 보는 오세훈-명태균 사건 타임라인</h1>
+    
+    <div class="flex mb-6 gap-4 justify-center flex-wrap">
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-400">
+        🗳️ 선거 일정
+      </span>
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800 border border-red-400">
+        👥 명태균의 접근
+      </span>
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800 border border-yellow-400">
+        💰 기타
+      </span>
+    </div>
+    
+    <div class="timeline-container relative">
+      <!-- 중앙 세로선 (데스크톱) -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 hidden md:block"></div>
+      <!-- 왼쪽 세로선 (모바일) -->
+      <div class="absolute left-0 h-full w-1 bg-gray-200 md:hidden"></div>
+      
+      <!-- 타임라인 아이템들 -->
+      <!-- 여기에 타임라인 아이템이 들어갑니다 -->
+    </div>
+  </div>
+  
+  <script>
+    // 타임라인 데이터
+    const timelineData = [
+      // 타임라인 데이터 배열... (React 코드에서 가져온 것과 동일)
+    ];
+
+    // HTML로 타임라인 아이템 생성
+    const timelineContainer = document.querySelector('.timeline-container');
+    
+    timelineData.forEach((item, index) => {
+      // 타임라인 아이템 생성 로직
+      // ...
+    });
+  </script>
+</body>
+</html>
