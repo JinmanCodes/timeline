@@ -119,4 +119,222 @@
           "강철원 실장, 경제학 박사이자 여의도연구원 부원장 역임한 이창근 공보단장에 정밀 분석 지시",
           "이창근 공보단장, 명태균의 부정 수법 오세훈 후보에 직보"
         ],
-        category: "명
+        category: "명태균의 접근"
+      },
+      {
+        date: "2021년 1월 하순",
+        event: "오세훈 캠프, 명태균에 1차 단절 통보",
+        details: [
+          "강철원 실장, '테스트용 여론조사 문제점' 지적하며 거래 불가 통보",
+          "명태균, 2월 중순까지 강철원 실장에게 여론조사 관련 지속 연락",
+          "이 시기 명태균-김한정 연결 본격화",
+          "\"여론조사를 캠프로 들고 왔더니 이상한 사람 취급받길래 연락처를 물었다. 동향(창원) 출신이라니 반가워서 밥값, 옷값 하라며 용돈을 줬다.\" (김한정 한국일보 인터뷰)"
+        ],
+        category: "명태균의 접근"
+      },
+      {
+        date: "2021년 2월 1일",
+        event: "김한정 → 미래한국연구소 1,000만원 송금",
+        details: [],
+        category: "기타"
+      },
+      {
+        date: "2021년 2월 3~4일",
+        event: "국민의힘, 예비경선 후보자 여론조사 실시",
+        details: [
+          "책임당원20% 일반시민 80%"
+        ],
+        category: "선거 일정"
+      },
+      {
+        date: "2021년 2월 5일",
+        event: "국민의힘, 본경선 진출자 발표",
+        details: [
+          "오세훈, 나경원, 오신환, 조은희"
+        ],
+        category: "선거 일정",
+        relatedEvents: [
+          {
+            title: "김한정 → 미래한국연구소 550만원 송금",
+            details: [],
+            category: "기타"
+          }
+        ]
+      },
+      {
+        date: "2021년 2월 18일",
+        event: "김한정 → 미래한국연구소 550만원 송금",
+        details: [],
+        category: "기타"
+      },
+      {
+        date: "2021년 2월 20일경",
+        event: "오세훈 캠프, 명태균에 2차 단절 통보",
+        details: [
+          "명태균, 김영선 전 의원과 함께 오세훈 캠프 방문",
+          "오세훈 후보 \"왜 이런 걸 나한테 가져오냐\"며 격노",
+          "'얼굴 뻘거스럽게 달아올라 캠프서 쫓겨났다'는 목격자 증언 존재",
+          "당시 후보 방 따로 없고 칸막이 구조여서 다수가 들을 수 있는 구조",
+          "※ 이후 오세훈 후보와 명태균 소통 단절"
+        ],
+        category: "명태균의 접근"
+      },
+      {
+        date: "2021년 2월 23일",
+        event: "김한정 → 미래한국연구소 700만원 송금",
+        details: [],
+        category: "기타"
+      },
+      {
+        date: "2021년 3월 4일",
+        event: "오세훈 국민의힘 후보로 선출",
+        details: [],
+        category: "선거 일정"
+      },
+      {
+        date: "2021년 3월 11일",
+        event: "오세훈-안철수 야권 단일화 협상 시작",
+        details: [],
+        category: "선거 일정"
+      },
+      {
+        date: "2021년 3월 21일",
+        event: "오세훈-안철수 단일화 방식 합의",
+        details: [
+          "1600표본, 100% 국민여론조사",
+          "KSOI, 입소스 진행, 무선 100%(안측 주장)",
+          "적합도 50(오측 주장), 경쟁력 50(안측 주장)"
+        ],
+        category: "선거 일정"
+      },
+      {
+        date: "2021년 3월 22일",
+        event: "오세훈-안철수 단일화 여론조사 시작",
+        details: [],
+        category: "선거 일정"
+      },
+      {
+        date: "2021년 3월 23일",
+        event: "오세훈 야권 단일 후보로 최종 선출",
+        details: [],
+        category: "선거 일정"
+      },
+      {
+        date: "2021년 3월 26일",
+        event: "김한정 → 미래한국연구소 500만원 송금",
+        details: [],
+        category: "기타"
+      },
+      {
+        date: "2021년 4월 7일",
+        event: "오세훈 서울시장 당선",
+        details: [],
+        category: "선거 일정"
+      }
+    ];
+
+    // 카테고리별 스타일 함수
+    function getCategoryStyle(category) {
+      switch(category) {
+        case '선거 일정':
+          return 'bg-blue-100 border-blue-400 text-blue-800';
+        case '명태균의 접근':
+          return 'bg-red-100 border-red-400 text-red-800';
+        case '기타':
+          return 'bg-yellow-100 border-yellow-400 text-yellow-800';
+        default:
+          return 'bg-gray-100 border-gray-400 text-gray-800';
+      }
+    }
+
+    // 카테고리별 아이콘 함수
+    function getCategoryIcon(category) {
+      switch(category) {
+        case '선거 일정':
+          return '🗳️';
+        case '명태균의 접근':
+          return '👥';
+        case '기타':
+          return '💰';
+        default:
+          return '📅';
+      }
+    }
+
+    // 타임라인 렌더링 함수
+    function renderTimeline() {
+      const container = document.querySelector('.timeline-container');
+      
+      timelineData.forEach((item, index) => {
+        const isEven = index % 2 === 0;
+        
+        // 타임라인 아이템 생성
+        const timelineItem = document.createElement('div');
+        timelineItem.className = 'relative mb-8 timeline-item';
+        
+        // 날짜 마커 생성
+        const marker = document.createElement('div');
+        marker.className = `absolute left-1/2 transform -translate-x-1/2 -mt-2 w-8 h-8 rounded-full bg-white border-4 z-10 flex items-center justify-center timeline-marker ${
+          item.category === '선거 일정' ? 'border-blue-400' : 
+          item.category === '명태균의 접근' ? 'border-red-400' : 'border-yellow-400'
+        }`;
+        marker.innerHTML = getCategoryIcon(item.category);
+        timelineItem.appendChild(marker);
+        
+        // 콘텐츠 컨테이너 생성
+        const content = document.createElement('div');
+        content.className = `w-5/12 timeline-content ${isEven ? 'ml-auto pr-8 text-right even' : 'mr-auto pl-8 odd'}`;
+        
+        // 콘텐츠 내용 생성
+        let contentHTML = `
+          <div class="p-4 rounded-lg border ${getCategoryStyle(item.category)}">
+            <div class="font-bold">${item.date}</div>
+            <h3 class="font-semibold mb-2">${item.event}</h3>
+        `;
+        
+        // 세부사항 추가
+        if (item.details && item.details.length > 0) {
+          contentHTML += `<ul class="text-sm list-disc ${isEven ? 'ml-4 text-right' : 'ml-4'}">`;
+          item.details.forEach(detail => {
+            contentHTML += `<li class="${isEven ? 'ml-4' : ''}">${detail}</li>`;
+          });
+          contentHTML += `</ul>`;
+        }
+        
+        // 관련 이벤트 추가
+        if (item.relatedEvents && item.relatedEvents.length > 0) {
+          item.relatedEvents.forEach(relEvent => {
+            contentHTML += `
+              <div class="mt-3 pt-2 border-t ${
+                relEvent.category === '선거 일정' ? 'border-blue-200' : 
+                relEvent.category === '명태균의 접근' ? 'border-red-200' : 'border-yellow-200'
+              }">
+                <h4 class="font-medium">${relEvent.title}</h4>
+            `;
+            
+            if (relEvent.details && relEvent.details.length > 0) {
+              contentHTML += `<ul class="text-sm list-disc ${isEven ? 'ml-4 text-right' : 'ml-4'}">`;
+              relEvent.details.forEach(detail => {
+                contentHTML += `<li class="${isEven ? 'ml-4' : ''}">${detail}</li>`;
+              });
+              contentHTML += `</ul>`;
+            }
+            
+            contentHTML += `</div>`;
+          });
+        }
+        
+        contentHTML += `</div>`;
+        content.innerHTML = contentHTML;
+        timelineItem.appendChild(content);
+        
+        // 타임라인에 아이템 추가
+        container.appendChild(timelineItem);
+      });
+    }
+
+    // 페이지 로드 시 타임라인 렌더링
+    document.addEventListener('DOMContentLoaded', renderTimeline);
+  </script>
+</body>
+</html>
