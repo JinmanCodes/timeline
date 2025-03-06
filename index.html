@@ -6,27 +6,32 @@
   <title>오세훈-명태균 사건 타임라인</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    /* 모바일에서 타임라인 레이아웃 조정 */
+    /* 모바일 최적화 스타일 */
     @media (max-width: 768px) {
-      .timeline-container {
-        margin-left: 1rem;
-        margin-right: 1rem;
-      }
       .timeline-item {
-        width: 90% !important;
-        margin-left: 2rem !important;
-        margin-right: auto !important;
+        width: 80% !important;
+        margin-left: 4rem !important;
         text-align: left !important;
       }
+      .timeline-center-line {
+        left: 2rem !important;
+        transform: none !important;
+      }
       .timeline-marker {
-        left: 0 !important;
+        left: 2rem !important;
+        transform: none !important;
+      }
+      .timeline-content.even {
+        margin-left: 4rem !important;
+        margin-right: auto !important;
+        text-align: left !important;
       }
     }
   </style>
 </head>
 <body class="bg-gray-100">
-  <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold text-center mb-8">한눈에 보는 오세훈-명태균 사건 타임라인</h1>
+  <div class="max-w-4xl mx-auto p-4 bg-white rounded-lg shadow">
+    <h1 class="text-2xl font-bold mb-6 text-center">한눈에 보는 오세훈-명태균 사건 타임라인</h1>
     
     <div class="flex mb-6 gap-4 justify-center flex-wrap">
       <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-400">
@@ -40,30 +45,66 @@
       </span>
     </div>
     
-    <div class="timeline-container relative">
-      <!-- 중앙 세로선 (데스크톱) -->
-      <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 hidden md:block"></div>
-      <!-- 왼쪽 세로선 (모바일) -->
-      <div class="absolute left-0 h-full w-1 bg-gray-200 md:hidden"></div>
+    <div class="relative timeline-container">
+      <!-- 중앙 세로선 -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 timeline-center-line"></div>
       
-      <!-- 타임라인 아이템들 -->
-      <!-- 여기에 타임라인 아이템이 들어갑니다 -->
+      <!-- 여기에 타임라인 아이템이 JavaScript로 삽입됩니다 -->
     </div>
   </div>
-  
+
   <script>
     // 타임라인 데이터
     const timelineData = [
-      // 타임라인 데이터 배열... (React 코드에서 가져온 것과 동일)
-    ];
-
-    // HTML로 타임라인 아이템 생성
-    const timelineContainer = document.querySelector('.timeline-container');
-    
-    timelineData.forEach((item, index) => {
-      // 타임라인 아이템 생성 로직
-      // ...
-    });
-  </script>
-</body>
-</html>
+      {
+        date: "2021년 1월 초순",
+        event: "오세훈-명태균 1차 회동",
+        details: [
+          "명태균, 김영선 의원 소개로 오세훈 후보 광진구 사무실 찾아옴",
+          "명태균, 자신을 '여론조사 전문 컨설턴트'라고 소개",
+          "이후 2차 회동 전까진 명태균이 오세훈 후보에 간헐적 연락"
+        ],
+        category: "명태균의 접근"
+      },
+      {
+        date: "2021년 1월 17일",
+        event: "오세훈 후보, 출마선언(북서울꿈의숲)",
+        details: [],
+        category: "선거 일정"
+      },
+      {
+        date: "2021년 1월 20일",
+        event: "오세훈 후보, 서울시장 예비후보 등록",
+        details: [
+          "오세훈 후보, 국민의힘 당사에서 서울시장 예비후보 등록"
+        ],
+        category: "선거 일정"
+      },
+      {
+        date: "2021년 1월 20일",
+        event: "오세훈-명태균 2차 회동",
+        details: [
+          "오세훈 후보, 명태균에 \"오늘 저녁 6시반. 예약명:김00, 잠시 후에 뵙겠습니다\"라는 문자 발송",
+          "광진구 중식당 '송쉐프'에서 오세훈·강철원·김영선·명태균 회동",
+          "이때부터 명태균과의 연락 창구는 강철원 실장으로 일원화"
+        ],
+        category: "명태균의 접근"
+      },
+      {
+        date: "2021년 1월 22일",
+        event: "국민의힘, 서울시장 보궐선거 경선일정 발표",
+        details: [],
+        category: "선거 일정"
+      },
+      {
+        date: "2021년 1월 26일",
+        event: "국민의힘, 예비경선 진출자 8인 선출",
+        details: [
+          "오세훈, 김근식, 김선동, 나경원, 오신환, 이종구, 조은희"
+        ],
+        category: "선거 일정"
+      },
+      {
+        date: "2021년 1월 하순",
+        event: "오세훈 캠프 내에서 '명태균 여론조사' 회의론 대두",
+        details: [
